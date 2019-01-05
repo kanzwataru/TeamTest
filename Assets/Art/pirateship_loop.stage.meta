@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 73cf173b280541b44bd48834ddfeafaa
+guid: d0d884c15c3a142ebb663c956bfd3440
 ScriptedImporter:
   fileIDToRecycleName:
     100000: Stage/Stage
@@ -72,7 +72,7 @@ ScriptedImporter:
     400064: Stage/Stage/Symbol/ship/14/Submesh0/Transform
     400066: Stage/Stage/Symbol/ship/15/Transform
     400068: Stage/Stage/Symbol/ship/15/Submesh0/Transform
-    2100000: pirateship_1_BaseMaterial
+    2100000: pirateship_loop_BaseMaterial
     2300000: Stage/Stage/Symbol/ship/0/Submesh0/MeshRenderer
     2300002: Stage/Stage/Symbol/ship/1/Submesh0/MeshRenderer
     2300004: Stage/Stage/Symbol/ship/2/Submesh0/MeshRenderer
@@ -152,7 +152,7 @@ ScriptedImporter:
     Shader: AnimVR/ImportedLine
     SimplifyFactor: 1
   materials:
-  - name: pirateship_1_BaseMaterial
+  - name: pirateship_loop_BaseMaterial
     type: Material
     assembly: UnityEngine.CoreModule
   needsAudioReimport: 0
