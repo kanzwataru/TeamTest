@@ -3,15 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class QuilAnimator : MonoBehaviour {
+    public float frameRate = 12;
 
     private List<GameObject> layers = new List<GameObject>();
-    public int frameSkip;
-    private int frameCounter = 0;
+    private float frameTimeCounter = 0.0f;
     private int frame = 0;
 
 	// Use this for initialization
 	void Start () {
-        
         for (int i = 0; i < transform.childCount; i++)
         {
             layers.Add(transform.GetChild(i).gameObject);
@@ -22,10 +21,8 @@ public class QuilAnimator : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-
-        if (frameCounter > frameSkip)
-        {
-            frameCounter = 0;
+        frameTimeCounter += (Time.deltaTime * 1000);
+        if(frameTimeCounter >= 1000 / frameRate) {
             layers[frame].SetActive(false);
 
             if (++frame == layers.Count) //up frames
@@ -34,8 +31,8 @@ public class QuilAnimator : MonoBehaviour {
             }
 
             layers[frame].SetActive(true);
-        }
-        frameCounter++;
 
+            frameTimeCounter = 0.0f;
+        }
 	}
 }
