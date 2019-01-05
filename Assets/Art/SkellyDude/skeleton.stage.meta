@@ -437,7 +437,7 @@ ScriptedImporter:
     ImportCameras: 1
     UnlitByDefault: 1
     Shader: AnimVR/ImportedLine
-    SimplifyFactor: 1
+    SimplifyFactor: 10
   materials:
   - name: skeleton_BaseMaterial
     type: Material
