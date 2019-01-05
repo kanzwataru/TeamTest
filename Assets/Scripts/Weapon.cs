@@ -26,12 +26,15 @@ public class Weapon : MonoBehaviour {
 			}
 		}
 
-		/* DEBUG */
-		firing = Input.GetKey(KeyCode.Space);	
+		firing = false;
 	}
 
 	void FireProjectile() {
 		var projectile = Instantiate(projectilePrefab, transform.position, transform.rotation).GetComponent<Rigidbody>();
 		projectile.AddRelativeForce(new Vector3(force,0,0));
+	}
+
+	public void Fire() {
+		firing = true;
 	}
 }
