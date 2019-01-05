@@ -145,9 +145,9 @@ ScriptedImporter:
   script: {fileID: 11500000, guid: 3701f04596f8fac4193258c57bcd3a4a, type: 3}
   Settings:
     ApplyStageTransform: 0
-    DefaultWrapMode: 2
+    DefaultWrapMode: 1
     AudioImport: 2
-    ImportCameras: 1
+    ImportCameras: 0
     UnlitByDefault: 1
     Shader: AnimVR/ImportedLine
     SimplifyFactor: 1
@@ -157,5 +157,5 @@ ScriptedImporter:
     assembly: UnityEngine.CoreModule
   needsAudioReimport: 0
   PreviewTexture: {instanceID: 0}
-  InfoString: "FPS: 12, 120 frames \n706772 verts, 939 lines"
+  InfoString: "FPS: 12, 120 frames \n370808 verts, 939 lines"
   HasFades: 1
