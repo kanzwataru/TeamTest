@@ -31,8 +31,7 @@ public class Weapon : MonoBehaviour {
 	}
 
 	void FireProjectile() {
-
-		var projectile = Instantiate(projectilePrefab, transform.position, Quaternion.Euler(0,0,0)).GetComponent<Rigidbody>();
-		projectile.AddForce(force, force * upForceMult, 0);
+		var projectile = Instantiate(projectilePrefab, transform.position, transform.rotation).GetComponent<Rigidbody>();
+		projectile.AddRelativeForce(new Vector3(force,0,0));
 	}
 }
