@@ -1272,7 +1272,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1041178025558436}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.59, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4638809095952260}
@@ -3685,7 +3685,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66bf4ac0decb7c447b554d8030289bf6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerTwo: 1
+  playerTwo: 0
   shipSpeed: 3
 --- !u!320 &320386130033189206
 PlayableDirector:
@@ -3703,6 +3703,8 @@ PlayableDirector:
   m_SceneBindings:
   - key: {fileID: 11400012, guid: d0d884c15c3a142ebb663c956bfd3440, type: 3}
     value: {fileID: 1645493291114812}
+  - key: {fileID: 11400010, guid: d0d884c15c3a142ebb663c956bfd3440, type: 3}
+    value: {fileID: 0}
   m_ExposedReferences:
     m_References: []
 --- !u!320 &320594628303088648
@@ -3735,7 +3737,7 @@ PlayableDirector:
   serializedVersion: 3
   m_PlayableAsset: {fileID: 11400008, guid: d0d884c15c3a142ebb663c956bfd3440, type: 3}
   m_InitialState: 1
-  m_WrapMode: 0
+  m_WrapMode: 1
   m_DirectorUpdateMode: 1
   m_InitialTime: 0
   m_SceneBindings:
