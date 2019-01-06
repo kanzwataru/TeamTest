@@ -28,7 +28,7 @@ public class ShipController : MonoBehaviour {
 	void FixedUpdate () {
 
         //Player One
-        if (playerTwo == false)
+        if (playerTwo)
         {
             horizMove = Input.GetAxis("Horizontal") * shipSpeed * Time.deltaTime;
             if(Input.GetKey(KeyCode.RightShift))
@@ -41,11 +41,11 @@ public class ShipController : MonoBehaviour {
                 weapon.Fire();
         }
 
-        if (horizMove > 0 && flipShip == false)
+        if (horizMove > 0 && !flipShip)
         {
             FlipShip();
         }
-        else if (horizMove < 0 && flipShip == true)
+        else if (horizMove < 0 && flipShip)
         {
             FlipShip();
         }
