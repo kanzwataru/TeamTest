@@ -7,13 +7,17 @@ public class GameController : MonoBehaviour {
 
     public Text scoreText;
 
-	// Use this for initialization
-	void Start () {
-		
-	}
+    public void ScoreUpdated(bool playerWinner)
+    {
+        scoreText.enabled = true;
+        if (playerWinner)
+        {
+            scoreText.text = "LEFT PLAYER WINS";
+        }
+        else
+        {
+            scoreText.text = "RIGHT PLAYER WINS";
+        }
+    }
 	
-	// Update is called once per frame
-	void Update () {
-		
-	}
 }
