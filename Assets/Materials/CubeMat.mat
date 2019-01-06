@@ -6,8 +6,8 @@ Material:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: New Material
-  m_Shader: {fileID: 10755, guid: 0000000000000000f000000000000000, type: 0}
+  m_Name: CubeMat
+  m_Shader: {fileID: 4800000, guid: b88f60e808e5345009c7838f52bdfabe, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -68,9 +68,12 @@ Material:
     - _Parallax: 0.02
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
+    - _Split: 0.35
     - _SrcBlend: 1
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
-    - _Color: {r: 1, g: 0.9415347, b: 0.6509434, a: 1}
+    - _Color: {r: 0.34496266, g: 0.8907298, b: 0.9622642, a: 1}
+    - _DarkCol: {r: 0.26274508, g: 0.5214052, b: 0.7921569, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _LitCol: {r: 0.47668207, g: 0.7154021, b: 0.9716981, a: 1}
