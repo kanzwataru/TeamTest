@@ -3,13 +3,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Benchmarker : MonoBehaviour {
+public class Benchmarker : SingletonObject<Benchmarker> {
 	class Bench {
 		public int times = 0;
 		public double ms = 0;
 	}
-
-	public static Benchmarker instance = SingletonHelper.makeSingleton<Benchmarker>();
 	
 	Dictionary<string, Bench> benchGroups = new Dictionary<string, Bench>();
 
