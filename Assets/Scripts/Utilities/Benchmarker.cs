@@ -24,7 +24,8 @@ public class Benchmarker : SingletonObject<Benchmarker> {
 		benchGroups[name].times += 1;
 	}
 
-	void Update() {
+	void LateUpdate() {
+		Debug.Log("New Frame");
 		foreach(var group in benchGroups) {
 			Debug.Log(string.Format("{0} took {1} ms in total (called {2} times)", group.Key, group.Value.ms, group.Value.times));
 
