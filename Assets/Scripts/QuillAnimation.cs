@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class QuilAnimator : MonoBehaviour {
+public class QuillAnimation : MonoBehaviour {
     public float frameRate = 12;
 
     private List<GameObject> layers = new List<GameObject>();
@@ -21,18 +21,20 @@ public class QuilAnimator : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        frameTimeCounter += (Time.deltaTime * 1000);
-        if(frameTimeCounter >= 1000 / frameRate) {
-            layers[frame].SetActive(false);
+        Benchmarker.instance.BenchCall("QuillAnimation Update", () => {
+            frameTimeCounter += (Time.deltaTime * 1000);
+            if(frameTimeCounter >= 1000 / frameRate) {
+                layers[frame].SetActive(false);
 
-            if (++frame == layers.Count) //up frames
-            {
-                frame = 0;
+                if (++frame == layers.Count) //up frames
+                {
+                    frame = 0;
+                }
+
+                layers[frame].SetActive(true);
+
+                frameTimeCounter = 0.0f;
             }
-
-            layers[frame].SetActive(true);
-
-            frameTimeCounter = 0.0f;
-        }
+        });
 	}
 }
