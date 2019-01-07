@@ -14,6 +14,7 @@ public abstract class SingletonObject<T> : MonoBehaviour where T : MonoBehaviour
 			}
 
 			var obj = new GameObject(typeof(T).ToString());
+			obj.transform.parent = singleton_root.transform;
 			_instance = obj.AddComponent<T>();
 		}
 	}
