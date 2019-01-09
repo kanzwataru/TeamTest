@@ -12,10 +12,14 @@ public class ShipController : MonoBehaviour {
     private Transform flipNode;
     private Weapon weapon;
 
+    public GameObject gameControllerObj;
+    private GameController gameController;
+
     private void Awake()
     {
         flipNode = this.transform.Find("FlipNode");
         weapon = flipNode.Find("Weapon").GetComponent<Weapon>();
+        gameController = gameControllerObj.GetComponent<GameController>();
     }
 
     private void FlipShip()
@@ -23,9 +27,20 @@ public class ShipController : MonoBehaviour {
         flipShip = !flipShip;
         flipNode.Rotate(new Vector3(0,180,0));
     }
-	
-	// Update is called once per frame
-	void FixedUpdate () {
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Cannonball")
+        {
+            //this player was hit
+            gameController.PlayerHit(playerTwo); //pass bool of which player was hit
+            Destroy(other.gameObject);
+            this.gameObject.SetActive(false);
+        }
+    }
+
+    // Update is called once per frame
+    void FixedUpdate () {
 
         //Player One
         if (playerTwo)

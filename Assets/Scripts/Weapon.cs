@@ -10,11 +10,12 @@ public class Weapon : MonoBehaviour {
 
 	float cooldownTimer = 0f;
 	bool firing = false;
+    Vector3 shootPos;
 
 	// Use this for initialization
 	void Start () {
-		
-	}
+
+    }
 	
 	void Update() {
 		cooldownTimer = Mathf.Clamp(cooldownTimer + Time.deltaTime, 0f, cooldownTime);
@@ -30,7 +31,8 @@ public class Weapon : MonoBehaviour {
 	}
 
 	void FireProjectile() {
-		var projectile = Instantiate(projectilePrefab, transform.position, transform.rotation).GetComponent<Rigidbody>();
+        shootPos = new Vector3(transform.position.x, transform.position.y + 0.75f, transform.position.z);
+        var projectile = Instantiate(projectilePrefab, shootPos, transform.rotation).GetComponent<Rigidbody>();
 		projectile.AddRelativeForce(new Vector3(force,0,0));
 	}
 
