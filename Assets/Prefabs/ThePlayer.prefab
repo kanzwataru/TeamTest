@@ -3728,6 +3728,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerTwo: 0
   shipSpeed: 3
+  adjustDegree: 60
   gameControllerObj: {fileID: 0}
 --- !u!114 &114218651849625876
 MonoBehaviour:
@@ -3742,7 +3743,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectilePrefab: {fileID: 1905300447865982, guid: 6a5c019d9e766404ab9b175e30d9282e,
     type: 2}
-  force: 500
+  force: 440
   upForceMult: 1.5
   cooldownTime: 1
 --- !u!320 &320386130033189206

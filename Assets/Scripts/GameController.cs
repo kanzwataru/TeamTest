@@ -7,6 +7,48 @@ using UnityEngine.SceneManagement;
 public class GameController : MonoBehaviour {
 
     public Text scoreText;
+    public RawImage leftGreenArrow1;
+    public RawImage leftGreenArrow2;
+    public RawImage rightGreenArrow1;
+    public RawImage rightGreenArrow2;
+
+    public void PlayerAngleChange(int player, int addArrow, int degree) //represent angle change with green arrow
+    {
+        if (addArrow == 1) 
+        {
+            if (degree == 0)
+            {
+                if (player == 2)
+                    rightGreenArrow1.enabled = true;
+                else
+                    leftGreenArrow1.enabled = true;
+            }
+            else if (degree == 1)
+            {
+                if (player == 2)
+                    rightGreenArrow2.enabled = true;
+                else
+                    leftGreenArrow2.enabled = true;
+            }
+        }
+        else if (addArrow == -1) 
+        {
+            if (degree == 2)
+            {
+                if (player == 2)
+                    rightGreenArrow2.enabled = false;
+                else
+                    leftGreenArrow2.enabled = false;
+            }
+            else if (degree == 1)
+            {
+                if (player == 2)
+                    rightGreenArrow1.enabled = false;
+                else
+                    leftGreenArrow1.enabled = false;
+            }
+        }
+    }
 
     public void ScoreUpdated(bool playerWinner)
     {
