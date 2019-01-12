@@ -11,6 +11,7 @@ public class GameController : MonoBehaviour {
     public RawImage leftGreenArrow2;
     public RawImage rightGreenArrow1;
     public RawImage rightGreenArrow2;
+    private bool victory = false;
 
     public void PlayerAngleChange(int player, int addArrow, int degree) //represent angle change with green arrow
     {
@@ -53,14 +54,24 @@ public class GameController : MonoBehaviour {
     public void ScoreUpdated(bool playerWinner)
     {
         scoreText.enabled = true;
-        if (playerWinner)
+
+        if (victory == false)
         {
-            scoreText.text = "LEFT PLAYER WINS";
+            victory = true;
+            if (playerWinner)
+            {
+                scoreText.text = "LEFT PLAYER WINS";
+            }
+            else
+            {
+                scoreText.text = "RIGHT PLAYER WINS";
+            }
         }
         else
         {
-            scoreText.text = "RIGHT PLAYER WINS";
+            scoreText.text = "IT'S A TIE";
         }
+
     }
 
     public void PlayerHit(bool playerWinner)
